@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Registration;
 
 use App\Http\Requests;
 
@@ -23,9 +24,9 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Registration $registration)
     {
-        //
+        return view('registration/create', ['registration' => $registration]);
     }
 
     /**
@@ -34,9 +35,9 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Registration $registration)
     {
-        //
+        return view('registration/create', ['registration' => $registration]);
     }
 
     /**
