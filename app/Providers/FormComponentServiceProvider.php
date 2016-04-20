@@ -15,7 +15,11 @@ class FormComponentServiceProvider extends ServiceProvider
     public function boot()
     {
         Form::component('bsText', 'components.form.text', ['name', 'label', 'labelColumns' => 2, 'inputColumns' => 10]);
-        Form::component('bsSelect', 'components.form.select', ['name', 'label', 'options' => [], 'labelColumns' => 2, 'inputColumns' => 10]);
+        Form::component('bsSelect', 'components.form.select', ['name', 'label', 'options' => [], 'placeholder' => '-- Select --', 'labelColumns' => 2, 'inputColumns' => 10]);
+        Form::component('bsCountry', 'components.form.country', ['name', 'label', 'placeholder' => '-- Select --', 'labelColumns' => 2, 'inputColumns' => 10]);
+        Form::component('bsPhone', 'components.form.phone', ['name', 'label', 'labelColumns' => 2, 'inputColumns' => 10]);
+        Form::component('bsDate', 'components.form.date', ['name', 'label', 'labelColumns' => 2, 'inputColumns' => 10]);
+        Form::component('bsRadio', 'components.form.radio', ['name', 'label', 'options' => [], 'labelColumns' => 2, 'inputColumns' => 10]);
     }
 
     /**

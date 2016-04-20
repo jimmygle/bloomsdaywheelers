@@ -11,15 +11,22 @@
         {{ Form::bsText('city', 'City') }}
         {{ Form::bsText('state', 'State/Province') }}
         {{ Form::bsText('zip', 'Zip/Postal Code') }}
-        // country dropdown
-        // phone input texts
-        // email input
-        // birth date input
+        {{ Form::bsCountry('country', 'Country') }}
+        {{ Form::bsPhone('phone', 'Phone') }}
+        {{ Form::bsText('email', 'Email') }}
+        {{ Form::bsDate('birth_date', 'Birth Date') }}
         {{ Form::bsSelect('gender', 'Gender', config('registration-form.genders')) }}
         {{ Form::bsSelect('shirt_size', 'Shirt Size', config('registration-form.shirtSizes')) }}
         {{ Form::bsSelect('travel_method', 'Travel Method', config('registration-form.travelMethods')) }}
+        {{ Form::bsRadio('travel_method', 'Travel Method', ['air' => 'Air', 'car' => 'Car']) }}
+        {{ Form::bsText('air_home_airport', 'Home Airport') }}
+        {{ Form::bsSelect('air_arrival_date', 'Desired Arrival Date/Time', $airDesiredArrival) }}
+        {{ Form::bsSelect('air_departure_date', 'Desired Departure Date/Time', $airDesiredDeparture) }}
+        {{ Form::bsSelect('air_booking_preference', 'Booking Preference', config('registration-form.airWhosBooking')) }}
 
-        // travel method select list
+        {{ Form::bsSelect('car_arrival_date', 'Arrival in Spokane', $carArrivalInSpokane) }}
+        {{ Form::bsSelect('car_departure_date', 'Departure from Spokane', $carDepartureFromSpokane) }}
+
         {{ Form::bsText('car_mileage', 'Car Travel Distance') }}
 
     {{ Form::close() }}

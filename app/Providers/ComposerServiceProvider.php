@@ -13,7 +13,8 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('components.form.country', 'App\Http\ViewComposers\CountryComposer');
+        view()->composer('registration.create', 'App\Http\ViewComposers\RegistrationFormComposer');
+        view()->composer('components.form.country', 'App\Http\ViewComposers\CountryFormComponentComposer');
     }
 
     /**

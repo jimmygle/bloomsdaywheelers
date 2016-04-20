@@ -12,7 +12,7 @@ class CreateConfigurationTable extends Migration
      */
     public function up()
     {
-        Schema::create('configuration', function (Blueprint $table) {
+        Schema::create('configurations', function (Blueprint $table) {
 
             $table->integer('bloomsday_year')->unsigned()->unique();
             $table->boolean('is_active_year');
@@ -34,6 +34,6 @@ class CreateConfigurationTable extends Migration
      */
     public function down()
     {
-        Schema::drop('configuration');
+        Schema::drop('configurations');
     }
 }
