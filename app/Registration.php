@@ -25,4 +25,13 @@ class Registration extends Model
         return $this->belongsTo('App\Configuration', 'bloomsday_year', 'bloomsday_year');
     }
 
+    /**
+     * Relates this registration to the associated category.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function country()
+    {
+        return $this->belongsTo('App\Country', 'country_abbreviation', 'abbreviation');
+    }
+
 }

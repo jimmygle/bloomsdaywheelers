@@ -24,7 +24,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('zip');
-            $table->string('country');
+            $table->char('country_abbreviation', 3);
             $table->string('phone');
             $table->string('email');
             $table->string('birth_date');
