@@ -23,6 +23,7 @@ class CreateConfigurationTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->primary('bloomsday_year');
+
         });
     }
 
