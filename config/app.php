@@ -156,6 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FormComponentServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
 
         /*
          * Third Party Package Service Providers...
