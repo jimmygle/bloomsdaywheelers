@@ -23,8 +23,6 @@ class CreateRegistrantPastResultsTable extends Migration
             $table->string('position');
 
             $table->softDeletes();
-            $table->foreign('registration_id')->references('id')->on('registrations')->onDelete('cascade');
-
         });
     }
 

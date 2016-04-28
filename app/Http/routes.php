@@ -11,4 +11,5 @@
 |
 */
 
+Route::get('/', 'HomeController@index');
 Route::resource('/register', 'RegisterController');

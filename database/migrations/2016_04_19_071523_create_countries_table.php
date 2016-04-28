@@ -14,7 +14,7 @@ class CreateCountriesTable extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
 
-            $table->char('country_abbreviation', 3)->index()->primary();
+            $table->char('abbreviation', 3)->index()->primary();
             $table->string('name');
 
         });

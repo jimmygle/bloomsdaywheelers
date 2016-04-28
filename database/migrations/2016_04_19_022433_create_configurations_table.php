@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConfigurationTable extends Migration
+class CreateConfigurationsTable extends Migration
 {
     /**
      * Create the configuration table.

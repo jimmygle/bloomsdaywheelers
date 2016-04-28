@@ -17,6 +17,10 @@ class RegistrationFormComposer
     const ARRIVAL_DAYS_BEFORE_BLOOMSDAY = 2;
     const DEPARTURE_DAYS_AFTER_BLOOMSDAY = 2;
 
+    /**
+     * Sets up the outside dependencies for this composer.
+     * @param Configuration $configurationModel
+     */
     public function __construct(Configuration $configurationModel)
     {
         $this->configurationModel = $configurationModel;
@@ -28,6 +32,11 @@ class RegistrationFormComposer
         }
     }
 
+    /**
+     * Called to perform the view modification.
+     * @param View $view
+     * @return void
+     */
     public function compose(View $view)
     {
         $this->view = $view;
@@ -37,9 +46,14 @@ class RegistrationFormComposer
         $this->setCarDepartureFromSpokane();
     }
 
+    /**
+     * Determines the air arrival date options based on the Bloomsday date.
+     * @return void
+     */
     protected function setDesiredAirArrivalOptions()
     {
-        $currentDay = $this->bloomsdayDate->subDays(2);
+        $currentDay = clone $this->bloomsdayDate;
+        $currentDay->subDays(2);
 
         $preferredArrivalOptions = [];
         for ($i=0; $i<static::ARRIVAL_DAYS_BEFORE_BLOOMSDAY; $i++) {
@@ -52,10 +66,14 @@ class RegistrationFormComposer
         $this->view->with('airDesiredArrival', $preferredArrivalOptions);
     }
 
+    /**
+     * Determines the air departure date options based on the Bloomsday date.
+     * @return void
+     */
     protected function setDesiredAirDepartureOptions()
     {
         $bloomsdayDate = $this->bloomsdayDate->format('Y-m-d');
-        $currentDay = $this->bloomsdayDate;
+        $currentDay = clone $this->bloomsdayDate;
 
         $preferredDepartureOptions = [];
         for ($i=0; $i<static::DEPARTURE_DAYS_AFTER_BLOOMSDAY; $i++) {
@@ -72,12 +90,12 @@ class RegistrationFormComposer
     }
 
     /**
-     * Sets view variable for car arrival in Spokane.
+     * Determines the car arrival date options based on the Bloomsday date.
      * @return void
      */
     protected function setCarArrivalInSpokane()
     {
-        $currentDay = $this->bloomsdayDate;
+        $currentDay = clone $this->bloomsdayDate;
         $currentDay->subDays(2);
 
         $carArrivalInSpokane = [];
@@ -89,9 +107,13 @@ class RegistrationFormComposer
         $this->view->with('carArrivalInSpokane', $carArrivalInSpokane);
     }
 
+    /**
+     * Determines the car departure date options based on the Bloomsday date.
+     * @return void
+     */
     protected function setCarDepartureFromSpokane()
     {
-        $currentDay = $this->bloomsdayDate;
+        $currentDay = clone $this->bloomsdayDate;
 
         $carDepartureFromSpokane = [];
         for ($i=0; $i<static::DEPARTURE_DAYS_AFTER_BLOOMSDAY; $i++) {

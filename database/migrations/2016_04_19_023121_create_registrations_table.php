@@ -49,8 +49,6 @@ class CreateRegistrationsTable extends Migration
 
             $table->nullableTimestamps();
             $table->softDeletes();
-
-            $table->foreign('bloomsday_year')->references('bloomsday_year')->on('configuration')->onDelete('cascade');
         });
     }
 

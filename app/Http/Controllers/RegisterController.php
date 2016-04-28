@@ -14,9 +14,9 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Registration $registration)
     {
-        //
+        return $this->create($registration);
     }
 
     /**
@@ -37,6 +37,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request, Registration $registration)
     {
+        dd($request->all());
         return view('registration/create', ['registration' => $registration]);
     }
 

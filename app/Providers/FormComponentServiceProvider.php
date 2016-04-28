@@ -20,6 +20,7 @@ class FormComponentServiceProvider extends ServiceProvider
         Form::component('bsPhone', 'components.form.phone', ['name', 'label', 'labelColumns' => 2, 'inputColumns' => 10]);
         Form::component('bsDate', 'components.form.date', ['name', 'label', 'labelColumns' => 2, 'inputColumns' => 10]);
         Form::component('bsRadio', 'components.form.radio', ['name', 'label', 'options' => [], 'labelColumns' => 2, 'inputColumns' => 10]);
+        Form::component('bsTextarea', 'components.form.textarea', ['name', 'label', 'rows' => 2, 'labelColumns' => 2, 'inputColumns' => 10]);
     }
 
     /**
