@@ -23,7 +23,15 @@
     </head>
     <body>
 
-        <div class="container">
+    @if (isset($isRegistrationWarningVisible) && $isRegistrationWarningVisible == true)
+        @include('partials.registration-warning')
+    @endif
+
+    <div class="container">
+
+            <div class="page-header">
+                <h1>Bloomsday Wheelers <small>May 1st, 2016</small></h1>
+            </div>
 
             @yield('content')
 

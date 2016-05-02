@@ -44,6 +44,7 @@ class RegistrationFormComposer
         $this->setDesiredAirDepartureOptions();
         $this->setCarArrivalInSpokane();
         $this->setCarDepartureFromSpokane();
+        $this->view->with('isRegistrationWarningVisible', true);
     }
 
     /**
@@ -123,6 +124,5 @@ class RegistrationFormComposer
 
         $this->view->with('carDepartureFromSpokane', $carDepartureFromSpokane);
     }
-
 
 }
