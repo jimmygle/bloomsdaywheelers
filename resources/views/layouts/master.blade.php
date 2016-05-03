@@ -10,9 +10,22 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
         <style type="text/css">
+            body, html {
+                background-color: {{ $bgColor or '#fff' }}
+            }
             div.scrollable {
                 overflow: auto;
                 margin: 10px 0;
+            }
+            div.header {
+                background: url('{{ asset("header.jpg") }}') no-repeat;
+                background-attachment: fixed;
+                background-size: contain;
+                min-height: 175px;
+                max-height: 225px;
+            }
+            .no-margin-bottom {
+                margin-bottom: 0px;
             }
         </style>
 
@@ -23,15 +36,15 @@
     </head>
     <body>
 
-    @if (isset($isRegistrationWarningVisible) && $isRegistrationWarningVisible == true)
-        @include('partials.registration-warning')
-    @endif
+        @if (isset($isRegistrationWarningVisible) && $isRegistrationWarningVisible == true)
+            @include('partials.registration-warning')
+        @endif
 
-    <div class="container">
+        <div class="header">
+            {{--<h1>Bloomsday Elite Wheelchair Division <small>{{ $readableBloomsdayDate or '' }}</small></h1>--}}
+        </div>
 
-            <div class="page-header">
-                <h1>Bloomsday Wheelers <small>May 1st, 2016</small></h1>
-            </div>
+        <div class="container">
 
             @yield('content')
 

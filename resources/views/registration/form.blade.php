@@ -13,7 +13,7 @@
             Form::bsText('state', 'State/Province') .
             Form::bsText('zip', 'Zip/Postal Code') .
             Form::bsCountry('country', 'Country') .
-            Form::bsPhone('phone', 'Phone') .
+            Form::bsText('phone', 'Phone Number') .
             Form::bsText('email', 'Email') .
             Form::bsDate('birth_date', 'Birth Date') .
             Form::bsSelect('gender', 'Gender', config('registration-form.genders')) .

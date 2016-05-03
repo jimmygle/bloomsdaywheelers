@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Registration extends Model
 {
 
+    protected $guarded = ['status'];
+
     /**
      * Gets all the past race results for this registration.
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

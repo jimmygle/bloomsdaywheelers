@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Registration;
+use App\Http\Requests\StoreRegistrationRequest;
 
 use App\Http\Requests;
 
@@ -16,7 +17,7 @@ class RegisterController extends Controller
      */
     public function index(Registration $registration)
     {
-        return $this->create($registration);
+        return view('registration/legal');
     }
 
     /**
@@ -26,19 +27,22 @@ class RegisterController extends Controller
      */
     public function create(Registration $registration)
     {
-        return view('registration/create', ['registration' => $registration]);
+        return view('registration/form', ['registration' => $registration]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Registration $registration)
     {
-        dd($request->all());
-        return view('registration/create', ['registration' => $registration]);
+        $formInput = $request->except(['_token']);
+        $registration->fill($formInput);
+
+//        dd($registration->toArray());
+        return view('registration/form', ['registration' => $registration]);
     }
 
     /**

@@ -16,7 +16,8 @@ class ConfigurationsTableSeeder extends Seeder
             'bloomsday_year' => 2016,
             'is_active_year' => true,
             'bloomsday_date' => '2016-05-01',
-            'registration_enabled' => true
+            'registration_enabled' => true,
+            'bg_color' => '#5bd'
         ]);
     }
 }

@@ -19,6 +19,7 @@ class CreateConfigurationsTable extends Migration
             $table->date('bloomsday_date');
             $table->boolean('registration_enabled');
             $table->text('registration_disabled_message');
+            $table->char('bg_color');
 
             $table->timestamps();
             $table->softDeletes();

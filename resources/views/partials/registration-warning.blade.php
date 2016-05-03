@@ -1,4 +1,4 @@
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger no-margin-bottom" role="alert">
     <div class="container">
         <div class="row">
             <div class="col-sm-8">

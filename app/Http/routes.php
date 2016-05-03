@@ -12,4 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::resource('/register', 'RegisterController');
+Route::get('/register', 'RegisterController@index');
+Route::get('/register/form', 'RegisterController@create');
+Route::post('/register/form', 'RegisterController@store');
